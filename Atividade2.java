@@ -17,16 +17,19 @@
         /**
          * @param args the command line arguments
          */
+         public static int base;
+         public static int altura;
+                  
+              
+        public static void Base(){
         
-        public static void Resultado(){  // PROCEDIMENTO PARA SOLICITAR BASE E ALTURA E MOSTRAR O RESULTADO
-            
-           int base = Integer.parseInt(JOptionPane.showInputDialog("Digite a base"));  // SOLICITA A BASE
-            int altura = Integer.parseInt(JOptionPane.showInputDialog("Digite a altura")); // SOLICITA A ALTURA 
-            float resultado = CalculoArea(base,altura); // CHAMA A FUNÇÃO E INSERE OS VALORES NO CALCULO E RETORNA O VALOR 
-            JOptionPane.showMessageDialog(null, resultado); // EXIBE NA TELA
-            
-    }
+        base = Integer.parseInt(JOptionPane.showInputDialog("Digite a base"));  // SOLICITA A BASE
+        }
 
+        public static void Altura(){
+        
+        altura = Integer.parseInt(JOptionPane.showInputDialog("Digite a altura"));  // SOLICITA A ALTURA
+        }
        
 
         public static float CalculoArea(int b, int a){  // FUNÇÃO DE CALCULO DA AREA
@@ -38,9 +41,10 @@
         }
 
         public static void main(String[] args) {
-             
-            Resultado();  // CHAMA A FUNÇÃO RESULTADO,
-           
+             Base();
+             Altura();
+            float Resultado = CalculoArea(base,altura);  // CHAMA A FUNÇÃO que mostra o resultado RESULTADO,
+            JOptionPane.showMessageDialog(null, Resultado);
 
             // TODO code application logic here
         }
