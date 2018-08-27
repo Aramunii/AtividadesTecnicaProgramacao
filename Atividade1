@@ -1,0 +1,52 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package atividade1;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author uz54049
+ */
+public class Atividade1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    
+    // FUNÇÃO QUE SOLICITA A FRASE PARA O USUÁRIO.
+   
+    public static String Frase(){
+        
+        String frase = JOptionPane.showInputDialog("Digite uma frase"); // 
+        
+    return frase;
+    }
+    
+    // FUNÇÃO QUE SOLICITA A QUANTIDADE DE VEZES QUE A FRASE IRÁ SE REPETIR
+    public static int Qt(){
+    
+        int qt = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de vezes a se repetir"));
+        
+    return qt;
+    }
+    
+    
+    
+    
+    public static void main(String[] args) {
+        // PROGRAMA INICIAL
+        String frase = Frase();  // CHAMANDO A FUNÇÃO "Frase" e retornando valor dentro de uma variavel
+        int quantidade = Qt(); // CHAMANDO A FUNÇÃO "Qt" e retornando valor dentro de uma variavel
+        for (int i = 0 ; i <quantidade;i++){    // um PARA DE 0 até enquanto i for menor que o numero de quantidade.
+            System.out.println(frase);  // imprime o resultado na tela.
+        }
+        
+        
+    }
+    
+}
