@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package atividade4;
 
 import javax.swing.JOptionPane;
@@ -19,23 +24,24 @@ public class Atividade4 {
 
     }
 
-    public static double Cubo(int x) {
+    public static double Cubo(double x) {
 
         double cubo = x / 6; // calcula o tamanho do cubo
-        System.out.println(cubo);
-        return cubo;
+            return cubo;
     }
+      
+    
 
     public static double Esfera(int x) {
 
-        double Esfera = 4 * 3.14 * (x ^ 3); // calcula a esfera
+        double Esfera = ( 4 * 3.14 * (x ^ 3) ) / 3; // calcula a esfera
 
         return Esfera;
     }
     
     public static double Equacao(double x,double y ){
            
-        double Equacao = x * 3 + y * 3 + 2;
+        double Equacao = (x*3) + (y*3) + 2;
     
     return Equacao;
     }
@@ -43,15 +49,15 @@ public class Atividade4 {
 
     public static void main(String[] args) {
         // TODO code application logic here
-        Entrada(); //chama o procedimento de entrada de dados
+        Entrada();                                   //chama o procedimento de entrada de dados
         double ResultCubo = Cubo(Inteiro);          // chama a função que calcula o volume da esfera
         double ResultEsfera = Esfera(Inteiro);    // chama a função que calcula o tamanho do cubo 
         
-        double Resultado = Equacao(ResultCubo,ResultEsfera);
-        JOptionPane.showMessageDialog(null, ResultCubo);
-        System.out.println("O Valor do cubo é " + ResultCubo);
+        double Resultado = Equacao(ResultCubo,ResultEsfera); // COLOCA O RESULTADO DO CUBO NO X E O RESULTADO DA ESFERA NO Y E CALCULA 
+        
+               System.out.println("O Valor do cubo é " + ResultCubo);
         System.out.println("O Volume da esfera é " + ResultEsfera);
-        System.out.println("O resultado da ecuação é " + Resultado);
+        System.out.println("O resultado da equação é " + Resultado);
 
     }
 
