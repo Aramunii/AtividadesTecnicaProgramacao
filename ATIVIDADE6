@@ -1,0 +1,47 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package atividade6;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author a06164256
+ */
+public class Atividade6 {
+
+    /**
+     * @param args the command line arguments
+     */
+    
+    public static int inteiro; // declara variavel global inteiro
+    public static double result; // declara variavel global double
+    
+    public static void Entrada(){ // PROCEDIMENTO QUE SOLICITA ENTRADA
+        inteiro = Integer.parseInt(JOptionPane.showInputDialog("Insira um numero"));
+    }
+    
+    public static void Potencia(int a, int b){ // PROCEDIMENTO PARA CALCULAR O VALOR DA POTENCIA USANDO PARAMETROS A E B
+              
+        result = Math.pow(a, b); // MATH.POW É UM PROCEDIMENTO DO JAVA QUE CALCULA O VALOR DA POTENCIA
+    }
+    
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Entrada(); // SOLICITA O VALOR INTEIRO AO USUÁRIO
+        int x = inteiro; // ATRIBUI NA VARIAVEL X O VALOR SOLICITADO ANTERIORMENTE
+        Entrada(); // SOLICITA O VALOR INTEIRO AO USUÁRIO
+        int y = inteiro; // ATRIBUI NA VARIAVEL Y O VALOR SOLICITADO ANTERIORMENTE
+        Potencia(x, y); // CHAMA A FUNÇÃO Potencia USANDO NOS PARAMETROS AS VARIAVEIS SOLICITADAS ACIMA
+        JOptionPane.showMessageDialog(null, result); //IMPRIME O RESULTADO.
+       
+        
+        
+    }
+    
+}
