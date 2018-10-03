@@ -1,0 +1,61 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package quicksort;
+
+import java.io.IOException;
+
+/**
+ *
+ * @author a06164256
+ */
+public class Quicksort {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void quicksort(int[] v, int esq, int dir) {
+        if (esq < dir) { // vai ser recursivo enquanto esquerdo for menor que o direito até que o esquerdo se cruze com o direito,
+            int j = separar(v, esq, dir); // executa o metodo de separar onde é feito a separação do pivô, jogando os menores que ele para esquerda , e os maiores para direita.
+            quicksort(v, esq, j - 1);// apos achar onde o pivo está,vai ordernar recursivamente  da esquerda ate o pivo -1
+            quicksort(v, j + 1, dir); // ordernar recursivamente do pivo +1 para a direita
+        }
+    }
+
+    public static int separar(int[] v, int esq, int dir) {
+        int i = esq + 1; // o i começa na esquerda +1 
+        int j = dir; // o j começa na posição da direita.
+        int pivo = v[esq]; // o pivo recebe o v na posição esquerda;
+        while (i <= j) { // enquanto i for menor que joja
+            if (v[i] <= pivo) { // se for menor que o pivo
+                i++; // adiciona 1 na posição i até achar elemento maior que o pivo
+            } else if (v[j] > pivo) { // se for maior que o pivo reduz o j até achar o menor que o pivo
+                j--;
+            } else if (i <= j) { // se o ir for menor ou igual que j  vai usar o metodo de troca  e incrementar i e diminuir j
+             trocar(v,i,j);
+             i++;
+             j--;
+            }
+        }
+        trocar(v, esq, j);
+        return j;
+    }
+    
+    public static void trocar(int[] v, int i, int j){
+    int aux = v[i]; // guarda o numero da casa v[i] 
+    v[i] = v[j]; // coloca o v[j] na casa v[i]
+    v[j] = aux; // pega o que foi guardado la em cima no aux e coloca na casa v[j]
+    }
+
+    public static void main(String[] args) throws IOException {
+        int[] v = {6, 3, 4, 5, 2, 7, 9, 8, 0};
+        quicksort(v, 0, v.length - 1);
+        for (int i = 0; i < v.length; i++) {
+            System.out.print(v[i]);
+            
+        }
+        
+    }
+}
